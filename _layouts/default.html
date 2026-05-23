@@ -10,7 +10,7 @@
   <body>
     <header class="site-header">
       {% if page.app %}
-        <a href="{{ '/' | append: page.app | append: '/support/' | relative_url }}" class="site-title">{{ page.app_title }}</a>
+        <a href="{{ '/' | append: page.app | append: '/' | relative_url }}" class="site-title">{{ page.app_title }}</a>
         {% if page.subtitle %}<span class="site-sub"> · {{ page.subtitle }}</span>{% endif %}
       {% else %}
         <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
@@ -23,7 +23,10 @@
 
     <footer class="site-footer">
       {% if page.app %}
-        <a href="{{ '/' | append: page.app | append: '/privacy/' | relative_url }}">Privacy Policy</a>
+        <div class="footer-links">
+          <a href="{{ '/' | append: page.app | append: '/support/' | relative_url }}">Support</a>
+          <a href="{{ '/' | append: page.app | append: '/privacy/' | relative_url }}">Privacy Policy</a>
+        </div>
         <span>© {{ site.time | date: '%Y' }} {{ page.app_title }}</span>
       {% else %}
         <span></span>

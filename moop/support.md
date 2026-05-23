@@ -7,7 +7,7 @@ permalink: /moop/support/
 
 # Moop
 
-<p class="tagline">A notes app, kept on your devices.</p>
+<p class="tagline">A multiplatform notes app, kept on your devices.</p>
 
 ## Get in touch
 

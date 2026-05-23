@@ -74,6 +74,22 @@ Provider privacy policies:
 - Google Drive — <https://policies.google.com/privacy>
 - Microsoft OneDrive — <https://privacy.microsoft.com/privacystatement>
 
+## Google API services user data policy
+
+Moop's use and transfer of information received from Google APIs to any
+other app will adhere to the
+[Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy),
+including the Limited Use requirements. In practice this means:
+
+- Moop only accesses your Google Drive data to upload and download the
+  notes you create in Moop.
+- Moop does not transfer Google user data to any third party.
+- Moop does not use Google user data for advertising, profiling, or
+  selling.
+- Moop does not allow humans to read Google user data, except (a) with
+  your explicit consent, (b) for security investigations, or (c) when
+  required by law.
+
 ## Device permissions
 
 Depending on the platform, Moop may request the following permissions. Each
@@ -117,7 +133,11 @@ necessity.
   If cloud sync is enabled, the deletion is propagated to your cloud
   provider on the next sync.
 - **Disconnect sync:** Disabling cloud sync clears the stored provider
-  credentials from your device.
+  credentials from your device and revokes the stored OAuth tokens. You can
+  additionally revoke Moop's access from your provider's account dashboard
+  ([Google](https://myaccount.google.com/permissions),
+  [Dropbox](https://www.dropbox.com/account/connected_apps),
+  [Microsoft](https://account.live.com/consent/Manage)).
 - **Uninstall:** Removing Moop from your device deletes the local database
   and the encryption key from the operating system keystore. Notes stored in
   your cloud provider account remain there until you delete them through

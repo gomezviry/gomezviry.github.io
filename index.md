@@ -9,7 +9,8 @@ title: Apps
 
 ## Moop
 
-A notes app, kept on your devices.
+A multiplatform notes app, kept on your devices.
 
+- [Homepage](/moop/)
 - [Support](/moop/support/)
 - [Privacy Policy](/moop/privacy/)

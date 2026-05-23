@@ -1,44 +1,39 @@
 # Apps support site
 
-A single GitHub Pages site that hosts support and privacy pages for all my
-apps. Each app lives under its own path prefix.
+Static Jekyll site for GitHub Pages. Hosts homepage, support, and privacy
+pages for all my apps under per-app path prefixes.
 
 ## URLs
 
-- `/` — landing, lists all apps
-- `/moop/support/` — Moop support page
+- `/` — top-level landing, lists all apps
+- `/moop/` — Moop homepage *(the page to submit to Google OAuth verification)*
+- `/moop/support/` — Moop support / FAQ
 - `/moop/privacy/` — Moop privacy policy
 
 ## Adding a new app
 
 1. Create a folder: `site/<appname>/`
-2. Add `support.md` and `privacy.md` with permalinks `/<appname>/support/`
-   and `/<appname>/privacy/`.
-3. Add a `defaults` entry in `_config.yml` so the layout picks up the
-   `app` + `app_title` variables:
+2. Add `index.md`, `support.md`, `privacy.md` with the matching permalinks
+   `/<appname>/`, `/<appname>/support/`, `/<appname>/privacy/`.
+3. Add a `defaults` block in `_config.yml`:
 
    ```yaml
-   defaults:
-     - scope: { path: "<appname>" }
-       values: { app: <appname>, app_title: <App Name> }
+   - scope: { path: "<appname>" }
+     values: { app: <appname>, app_title: <App Name> }
    ```
 
-4. Link to the new app from `index.md`.
+4. Link the new app from the top-level `index.md`.
 
-## Recommended hosting
+## Hosting
 
-Put this site in its **own** repository (e.g. `support` or
-`<username>.github.io`), separate from each app's source repo. Pages from a
-project repo will be served at:
-
-```
-https://<username>.github.io/<repo-name>/moop/support/
-```
-
-Or, if you push to a user-site repo (`<username>.github.io`), simply:
+Put this site in its own dedicated repo (e.g. `<username>.github.io` or a
+project repo named `support`). For Google OAuth verification, the homepage
+URL you submit on the consent screen must match the privacy policy URL's
+domain — using one site for both is the simplest way to satisfy that.
 
 ```
-https://<username>.github.io/moop/support/
+https://<username>.github.io/moop/            # homepage
+https://<username>.github.io/moop/privacy/    # privacy policy
 ```
 
 ## Publish
@@ -46,13 +41,13 @@ https://<username>.github.io/moop/support/
 From the support-site repo root:
 
 ```bash
-# Copy the contents of this site/ folder to the repo root, then:
+# Copy contents of this site/ folder to the repo root.
 git add .
 git commit -m "Publish"
 git push
 ```
 
-Enable Pages in **Settings → Pages**, source `main` branch `/ (root)`.
+Then enable Pages in **Settings → Pages**, source `main` branch, `/ (root)`.
 
 ## Preview locally
 
