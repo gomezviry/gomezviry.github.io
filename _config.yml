@@ -1,0 +1,19 @@
+title: Viry Gomez · Apps
+description: Support and privacy for my apps.
+url: ""
+baseurl: ""
+
+theme: null
+permalink: pretty
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+defaults:
+  - scope:
+      path: "moop"
+    values:
+      app: moop
+      app_title: Moop

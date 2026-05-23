@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} · {% endif %}{% if page.app_title %}{{ page.app_title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  </head>
+  <body>
+    <header class="site-header">
+      {% if page.app %}
+        <a href="{{ '/' | append: page.app | append: '/support/' | relative_url }}" class="site-title">{{ page.app_title }}</a>
+        {% if page.subtitle %}<span class="site-sub"> · {{ page.subtitle }}</span>{% endif %}
+      {% else %}
+        <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
+      {% endif %}
+    </header>
+
+    <main>
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      {% if page.app %}
+        <a href="{{ '/' | append: page.app | append: '/privacy/' | relative_url }}">Privacy Policy</a>
+        <span>© {{ site.time | date: '%Y' }} {{ page.app_title }}</span>
+      {% else %}
+        <span></span>
+        <span>© {{ site.time | date: '%Y' }}</span>
+      {% endif %}
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+:root {
+  --fg: #1a1a1a;
+  --muted: #6b6b6b;
+  --bg: #fafafa;
+  --rule: #e5e5e5;
+  --link: #1a1a1a;
+  --max: 38rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #e8e8e8;
+    --muted: #9a9a9a;
+    --bg: #111;
+    --rule: #2a2a2a;
+    --link: #e8e8e8;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2rem;
+}
+
+.site-header {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 3rem;
+}
+.site-header .site-title {
+  color: var(--fg);
+  font-weight: 600;
+  text-decoration: none;
+}
+.site-header .site-sub { color: var(--muted); }
+
+main h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+main .tagline {
+  color: var(--muted);
+  margin: 0 0 2.5rem;
+  font-size: 1.05rem;
+}
+
+main h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 2.5rem 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+main h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.75rem 0 0.5rem;
+}
+
+main p, main li {
+  margin: 0 0 1rem;
+}
+
+main ul, main ol { padding-left: 1.25rem; }
+
+main a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+main a:hover { opacity: 0.65; }
+
+main code, main .mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.95em;
+}
+
+main hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2.5rem 0;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: -0.25rem 0 2rem;
+}
+
+.site-footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.site-footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.site-footer a:hover { color: var(--fg); }
